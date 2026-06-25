@@ -1,0 +1,281 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+}
+
+h1 {
+  color: #f1c40f;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Screen area */
+.screen-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 2rem;
+  perspective: 400px;
+}
+
+.light-effect {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 24px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(180deg, #4a4a4a 0%, #333333 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transform: rotateX(8deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  border: 1px solid #555555;
+}
+
+.screen-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Seat grid — 5 rows × 8 columns */
+#cinema {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+.seat {
+  aspect-ratio: 1;
+  min-height: 36px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5cb85c;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+}
+
+.seat:hover:not(.occupied) {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.seat.occupied {
+  background-color: #777777;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #ffc107;
+}
+
+.seat.reserved{
+  background-color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Buy button */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  margin: 20px;
+}
+
+#buyButton {
+  padding: 0.55rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+#buyButton:hover {
+  background-color: #e08e0b;
+  transform: translateY(-1px);
+}
+
+#buyButton:active {
+  transform: translateY(0);
+}
+
+#buyButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Admin buttons */
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.admin-actions button {
+  flex: 1;
+  min-width: 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #5a7d9a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.admin-actions button:hover {
+  background-color: #4d6d87;
+}
+
+.btn-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Invoice card */
+.invoice {
+  width: 100%;
+  max-width: 520px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 16px 16px 0 0;
+  padding: 1.5rem 1.75rem 1.25rem;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.invoice h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 0.75rem;
+  color: #000000;
+}
+
+#invoice-details {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  color: #000000;
+}
+
+#invoice-details p {
+  margin-bottom: 0.5rem;
+}
+
+#invoice-details ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.35rem;
+}
+
+#invoice-details li {
+  margin-bottom: 0.25rem;
+}
+
+#print-btn {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #5a7d9a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#print-btn:hover {
+  background-color: #4d6d87;
+}
+
+.invoice .footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+/* Print — hide chrome, show invoice */
+@media print {
+  body {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  h1,
+  .screen-container,
+  #cinema,
+  .actions,
+  .admin-actions,
+  #print-btn {
+    display: none !important;
+  }
+
+  .invoice {
+    display: block !important;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Ticket Reservation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Cinema Ticket Reservation</h1>
+
+    <div class="screen-container">
+      <div class="light-effect"></div>
+      <div class="screen">Screen</div>
+    </div>
+
+    <div id="cinema">
+    </div>
+
+    <div class="actions">
+      <button id="buyButton">Buy</button>
+    </div>
+
+    <div class="admin-actions">
+      <button id="clearStorageButton">Clear Data</button>
+      <button id="showPurchaseButton">Reserved</button>
+    </div>
+
+    <div id="invoice" class="invoice" style="display: none">
+      <h2>Purchase Invoice</h2>
+      <div id="invoice-details"></div>
+      <button id="print-btn" onclick="window.print()">Print Invoice</button>
+      <p class="footer">Faraz Cinema with the latest movies</p>
+    </div>
+
+    <script type="module" src="./dist/main.js" defer></script>
+  </body>
+</html>
