@@ -1,6 +1,6 @@
 "use strict"
 import {Cinema} from "./models/Cinema.js"
-import {Seat} from "./models/Seats.js"
+import {Seat} from "./models/Seat.js"
 
 const cinemaDiv = document.getElementById('cinema') as HTMLDivElement;
 const cinema = new Cinema<Seat>;

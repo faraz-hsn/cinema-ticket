@@ -1,5 +1,5 @@
 import {Reservable} from "./Reservable.js"
-import { SeatInfo } from "../interface/SeatInfo.js";
+import { SeatInfo } from "../types/SeatInfo.js";
 export class Seat extends Reservable{
 
     private selected:boolean = false;

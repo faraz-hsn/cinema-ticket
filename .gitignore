@@ -1,2 +1,5 @@
 node_modules/
 dist/
+
+# Compiled JS in source (should never exist)
+src/**/*.js
