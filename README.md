@@ -6,7 +6,7 @@
 ---
 
 ## 🎥 Sneak Peek
-[![Watch Demo](Cinema Ticket.gif)]
+![Cinema Ticket Demo](Cinema%20Ticket.gif)
 ```
 ┌─────────────────────────────────┐
 │           🎬 Screen             │
